@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Apple() {
+        this.aweight = 10;
+        this.getWeight = function () {
+            return this.aweight;
+        }
+        this.eatApple = function () {
+            this.weight--;
+        }
+
+    }
+    function Human() {
+          this.name = "";
+          this.gender = true;
+          this.weight = 0;
+          this.setName = function (name) {
+              this.name=name;
+          }
+          this.getName = function () {
+              console.log(this.name);
+          }
+          this.setGender = function (gender) {
+              this.gender=gender;
+          }
+          this.getGender = function () {
+              if (this.gender) {
+                  this.gender = "Male";
+              } else {
+                  this.gender = "Female";
+              }
+          }
+          this.setWeight = function (w) {
+              this.weight = w;
+          }
+          this.getWeight = function () {
+              console.log(this.weight);
+          }
+          this.say = function (something) {
+              console.log(something);
+          }
+          this.eat = function (apple) {
+              if (apple.aweight > 0) {
+                  apple.aweight--;
+                  this.weight++;
+              }
+          }
+          this.getInfo = function () {
+              console.log(this.name + "-" + this.gender +"-"+this.weight)
+          }
+    }
+    var adam = new Human();
+    var eva = new Human();
+    var a = new Apple();
+    adam.setGender(true);
+    eva.setGender(false);
+    adam.setWeight(70);
+    eva.setWeight(45);
+    adam.setName("Adam");
+    eva.setName("Eva");
+    adam.getGender();
+    eva.getGender();
+    adam.getInfo();
+    eva.getInfo();
+    adam.say("blabla");
+    adam.eat(a);
+    adam.getInfo();
+    console.log(a.getWeight());
+    eva.eat(a);
+    adam.eat(a);
+    eva.eat(a);
+    adam.eat(a);
+    eva.eat(a);
+    adam.eat(a);
+    eva.eat(a);
+    adam.eat(a);
+    eva.eat(a);
+    adam.eat(a);
+    eva.eat(a);
+    adam.getInfo();
+    eva.getInfo();
+    console.log(a.getWeight());
+</script>
+</body>
+</html>
